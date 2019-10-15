@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:replace="navbar :: navlinks"></div>
+
+<center>
+    <hr/>
+    <br><br><br><br><br><br><br><br><br>
+    <form action="#" th:action="@{/process_classroom}" th:object="${classroom}" method="post">
+        <input type="hidden" th:field="*{classroomId}" />
+        <div class="form-group">
+            <div class="col-3">
+                <input type="text" th:field="*{className}" class="form-control">
+                <br>
+                <button type="submit" >Submit</button>
+            </div>
+        </div>
+    </form>
+</center>
+</body>
+</html>

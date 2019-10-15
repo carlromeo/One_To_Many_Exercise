@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:replace="navbar :: navlinks"></div>
+
+<tr>
+    <th>Student Name</th>
+    <th>Student Number</th>
+    <th>Major</th>
+</tr>
+
+<table>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.studentNumber}"></td>
+        <td th:text="${student.major}"></td>
+        <td>
+            <a th:href="@{updatestudent/{id}(id=${student.id})}">Update</a>
+            <a th:href="@{detailstudent/{id}(id=${student.id})}">Details</a>
+            <a th:href="@{deletestudent/{id}(id=${student.id})}">Delete</a>
+        </td>
+</table>
+</body>
+</html>

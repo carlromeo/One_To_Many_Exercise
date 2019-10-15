@@ -13,8 +13,8 @@ public class Student {
     private  String major;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "student_id")
-    private Student student;
+    @JoinColumn(name = "classroomId")
+    private Classroom classroom;
 
     public long getId() {
         return id;
@@ -48,11 +48,11 @@ public class Student {
         this.major = major;
     }
 
-    public Student getStudent() {
-        return student;
+    public Classroom getClassroom() {
+        return classroom;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 }

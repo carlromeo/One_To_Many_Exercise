@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div th:replace="navbar :: navlinks"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+
+            <tr>
+                <th>Student Name</th>
+                <th>Student Number</th>
+                <th>Major</th>
+            </tr>
+            <table>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.studentNumber}"></td>
+                    <td th:text="${student.major}"></td>
+                    <td>
+                        <a th:href="@{updatestudent/{id}(id=${student.id})}">Update</a>
+                        <a th:href="@{detailstudent/{id}(id=${student.id})}">Details</a>
+                        <a th:href="@{deletestudent/{id}(id=${student.id})}">Delete</a>
+                    </td>
+            </table>
+        </div>
+
+        <tr>
+            <th>Class Name</th>
+            <th>Professor</th>
+            <th>Credit</th>
+            <th>Description</th>
+        </tr>
+
+        <table>
+            <tr th:each="classroom : ${classrooms}">
+                <td th:text="${classroom.className}"></td>
+                <td th:text="${classroom.professor}"></td>
+                <td th:number="${classroom.credit}"></td>
+                <td th:text="${classroom.description}"></td>
+                <td>
+                    <a th:href="@{updateclassroom/{id}(id=${classroom.classroomId})}">Update</a>
+                    <a th:href="@{detailclassroom/{id}(id=${classroom.classroomId})}">Details</a>
+                    <a th:href="@{deleteclassroom/{id}(id=${classroom.classroomId})}">Delete</a>
+                </td>
+        </table>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

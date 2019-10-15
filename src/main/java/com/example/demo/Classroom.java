@@ -8,21 +8,22 @@ public class Classroom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long classroomId;
     private String className;
     private String professor;
     private double credit;
     private String description;
 
-    @OneToMany(mappedBy = "classroom", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public Set<Student> students;
+    @OneToMany(mappedBy = "classroom", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Student> students;
 
-    public long getId() {
-        return id;
+
+    public long getClassroomId() {
+        return classroomId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setClassroomId(long classroomId) {
+        this.classroomId = classroomId;
     }
 
     public String getClassName() {

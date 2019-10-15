@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div th:replace="navbar :: navlinks"></div>
+<nav>
+    <ul>
+        <li>
+            <a href="/">
+                <div class="icon">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+
+                </div>
+                <div class="name"><span data-text="Home">Home</span></div>
+            </a>
+        </li>
+
+        <li>
+            <a href="/classroomlist">
+                <div class="icon">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+
+                </div>
+                <div class="name"><span data-text="All Classrooms">All Classrooms</span></div>
+            </a>
+        </li>
+
+        <li>
+            <a href="/studentlist">
+                <div class="icon">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+
+                </div>
+                <div class="name"><span data-text="All Students">All Students</span></div>
+            </a>
+        </li>
+
+        <li>
+            <a href="/addclassroom">
+                <div class="icon">
+                    <i class="fa fa-folder-open" aria-hidden="true"></i>
+
+                </div>
+                <div class="name"><span data-text="Add New Classroom">Add New Classroom</span></div>
+            </a>
+        </li>
+
+        <li>
+            <a href="/addstudent">
+                <div class="icon">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+
+                </div>
+                <div class="name"><span data-text="Add New Student">Add New Student</span></div>
+            </a>
+        </li>
+    </ul>
+</nav>
+</div>
+</body>
+</html>
